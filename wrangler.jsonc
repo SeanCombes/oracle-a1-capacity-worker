@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "oracle-a1-capacity-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-28",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "vars": {
+    "OCI_REGION": "uk-london-1",
+    "STACK_LABEL": "minecraft-server",
+    "ERROR_COOLDOWN_SECONDS": "21600",
+    "LEASE_SECONDS": "600",
+    "JOB_POLL_SECONDS": "120",
+    "TRANSIENT_RETRY_SECONDS": "300",
+    "CREATE_COOLDOWN_SECONDS": "1200"
+  },
+  "secrets": {
+    "required": [
+      "OCI_TENANCY_OCID",
+      "OCI_USER_OCID",
+      "OCI_KEY_FINGERPRINT",
+      "OCI_PRIVATE_KEY",
+      "OCI_STACK_OCID",
+      "DISCORD_WEBHOOK_URL",
+      "DISCORD_SUCCESS_USER_ID",
+      "ADMIN_TOKEN",
+      "NOTIFY_TOKEN"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DEPLOYMENT_COORDINATOR",
+        "class_name": "DeploymentCoordinator"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["DeploymentCoordinator"]
+    }
+  ],
+  "triggers": {
+    "crons": []
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

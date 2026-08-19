@@ -1,0 +1,23 @@
+{
+  "name": "oracle-a1-capacity-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cf-typegen": "wrangler types",
+    "types:check": "wrangler types --check",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy:dry": "wrangler deploy --dry-run --outdir dist --secrets-file test/fixtures/verify-secrets.env",
+    "startup": "wrangler check startup --env-file test/fixtures/verify-secrets.env",
+    "verify": "npm run types:check && npm run typecheck && npm test && npm run deploy:dry && npm run startup"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.18.8",
+    "@types/node": "^26.1.2",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10",
+    "wrangler": "4.114.0"
+  }
+}

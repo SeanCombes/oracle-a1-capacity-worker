@@ -1,0 +1,9 @@
+# Copy to .dev.vars only for local development. Never commit real values.
+OCI_TENANCY_OCID=replace-with-tenancy-ocid
+OCI_USER_OCID=replace-with-user-ocid
+OCI_KEY_FINGERPRINT=replace-with-api-key-fingerprint
+OCI_PRIVATE_KEY="replace-with-pkcs8-pem-private-key"
+OCI_STACK_OCID=replace-with-resource-manager-stack-ocid
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/replace-me
+DISCORD_SUCCESS_USER_ID=replace-with-discord-user-id
+ADMIN_TOKEN=replace-with-a-long-random-token
