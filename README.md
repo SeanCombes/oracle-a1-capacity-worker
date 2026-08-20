@@ -279,3 +279,4 @@ A code rollback does not erase Durable Object state. Avoid rolling back past the
 - Discord mentions are disabled for failures and restricted to `DISCORD_SUCCESS_USER_ID` for the one-time success notification.
 
 References: [OCI request signing](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/signingrequests.htm), [OCI API signing keys](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm), [OCI Resource Manager policy reference](https://docs.oracle.com/en-us/iaas/Content/Identity/policyreference/resourcemanagerpolicyreference.htm), [Cloudflare Cron Triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/), [Cloudflare secrets](https://developers.cloudflare.com/workers/configuration/secrets/), and [Durable Objects rules](https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/).
+Adding this for cloudflare worker purposes.
